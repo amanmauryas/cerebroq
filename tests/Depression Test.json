@@ -1,0 +1,93 @@
+{
+    "questions": [
+      {
+        "question": "Do you feel down or hopeless?",
+        "options": [
+          { "text": "Not at all", "score": 0 },
+          { "text": "Several days", "score": 1 },
+          { "text": "More than half the days", "score": 2 },
+          { "text": "Nearly every day", "score": 3 }
+        ]
+      },
+      {
+        "question": "Little interest or pleasure in doing things?",
+        "options": [
+          { "text": "Not at all", "score": 0 },
+          { "text": "Several days", "score": 1 },
+          { "text": "More than half the days", "score": 2 },
+          { "text": "Nearly every day", "score": 3 }
+        ]
+      },
+      {
+        "question": "Trouble falling or staying asleep, or sleeping too much?",
+        "options": [
+          { "text": "Not at all", "score": 0 },
+          { "text": "Several days", "score": 1 },
+          { "text": "More than half the days", "score": 2 },
+          { "text": "Nearly every day", "score": 3 }
+        ]
+      },
+      {
+        "question": "Feeling tired or having little energy?",
+        "options": [
+          { "text": "Not at all", "score": 0 },
+          { "text": "Several days", "score": 1 },
+          { "text": "More than half the days", "score": 2 },
+          { "text": "Nearly every day", "score": 3 }
+        ]
+      },
+      {
+        "question": "Poor appetite or overeating?",
+        "options": [
+          { "text": "Not at all", "score": 0 },
+          { "text": "Several days", "score": 1 },
+          { "text": "More than half the days", "score": 2 },
+          { "text": "Nearly every day", "score": 3 }
+        ]
+      },
+      {
+        "question": "Feeling bad about yourself or that you are a failure?",
+        "options": [
+          { "text": "Not at all", "score": 0 },
+          { "text": "Several days", "score": 1 },
+          { "text": "More than half the days", "score": 2 },
+          { "text": "Nearly every day", "score": 3 }
+        ]
+      },
+      {
+        "question": "Trouble concentrating on things?",
+        "options": [
+          { "text": "Not at all", "score": 0 },
+          { "text": "Several days", "score": 1 },
+          { "text": "More than half the days", "score": 2 },
+          { "text": "Nearly every day", "score": 3 }
+        ]
+      },
+      {
+        "question": "Moving or speaking so slowly that other people could have noticed?",
+        "options": [
+          { "text": "Not at all", "score": 0 },
+          { "text": "Several days", "score": 1 },
+          { "text": "More than half the days", "score": 2 },
+          { "text": "Nearly every day", "score": 3 }
+        ]
+      },
+      {
+        "question": "Thoughts that you would be better off dead or of hurting yourself?",
+        "options": [
+          { "text": "Not at all", "score": 0 },
+          { "text": "Several days", "score": 1 },
+          { "text": "More than half the days", "score": 2 },
+          { "text": "Nearly every day", "score": 3 }
+        ]
+      }
+    ],
+    "score_ranges": [
+      { "min": 0, "max": 4, "message": "Minimal depression" },
+      { "min": 5, "max": 9, "message": "Mild depression" },
+      { "min": 10, "max": 14, "message": "Moderate depression" },
+      { "min": 15, "max": 19, "message": "Moderately severe depression" },
+      { "min": 20, "max": 27, "message": "Severe depression" }
+    ]
+  }
+  

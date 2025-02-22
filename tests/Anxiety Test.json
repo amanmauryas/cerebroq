@@ -1,0 +1,91 @@
+{
+    "questions": [
+        {
+            "question": "Do you often feel nervous, anxious, or on edge?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you find it difficult to control your worrying?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you experience sudden feelings of panic or fear?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you avoid certain situations because they make you anxious?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you have trouble sleeping due to excessive worrying?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you experience physical symptoms like sweating, trembling, or a racing heart when anxious?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you overthink or excessively worry about different aspects of your life?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you feel restless or unable to relax?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you feel like your mind is always racing?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        }
+    ],
+    "score_ranges": [
+        { "min": 0, "max": 10, "message": "Low anxiety levels. You likely have a good handle on stress and anxiety." },
+        { "min": 11, "max": 20, "message": "Mild anxiety. You may experience occasional anxious thoughts, but they do not significantly impact your daily life." },
+        { "min": 21, "max": 30, "message": "Moderate anxiety. You may struggle with worry and stress, and professional guidance could be helpful." },
+        { "min": 31, "max": 50, "message": "Severe anxiety. Your anxiety may be affecting your daily life. Seeking help from a mental health professional is strongly recommended." }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "questions": [
+        {
+            "question": "Do you frequently have trouble staying focused on tasks or conversations?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you often feel restless, fidgety, or unable to sit still for long periods?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you frequently forget appointments, lose important items, or struggle with organization?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you have difficulty completing projects, even when you start with enthusiasm?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you act impulsively, interrupt conversations, or struggle with self-control?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        }
+    ],
+    "score_ranges": [
+        { "min": 0, "max": 6, "message": "Low likelihood of ADHD. Your attention and activity levels appear typical." },
+        { "min": 7, "max": 15, "message": "Moderate ADHD symptoms. You may experience some difficulties with focus and self-control." },
+        { "min": 16, "max": 30, "message": "High likelihood of ADHD. Your symptoms indicate significant attention-related challenges. Seeking professional evaluation is advised." }
+    ]
+}

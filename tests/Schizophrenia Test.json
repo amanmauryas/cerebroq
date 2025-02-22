@@ -1,0 +1,54 @@
+{
+    "questions": [
+        {
+            "question": "Do you ever hear voices or see things that others do not?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you feel that people are watching, following, or trying to harm you without any clear reason?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you have difficulty organizing your thoughts or following a conversation?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you find yourself withdrawing from social activities, friends, or family?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you experience intense mood swings, extreme apathy, or lack of motivation?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        }
+    ],
+    "score_ranges": [
+        { "min": 0, "max": 6, "message": "Low likelihood of schizophrenia. Your experiences seem within a normal range." },
+        { "min": 7, "max": 15, "message": "Moderate symptoms. Some experiences may be concerning. Consider professional evaluation." },
+        { "min": 16, "max": 30, "message": "High likelihood of schizophrenia. Your symptoms indicate possible serious mental health concerns. Seeking medical help is strongly recommended." }
+    ]
+}

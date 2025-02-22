@@ -1,0 +1,54 @@
+{
+    "questions": [
+        {
+            "question": "Do you have recurring, distressing memories or nightmares about a traumatic event?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you avoid places, people, or activities that remind you of a traumatic experience?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you feel easily startled, constantly on edge, or have difficulty relaxing?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you experience mood swings, feelings of guilt, or emotional numbness?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you have trouble concentrating, sleeping, or managing anger due to past trauma?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        }
+    ],
+    "score_ranges": [
+        { "min": 0, "max": 6, "message": "Low likelihood of PTSD. Your responses indicate minimal trauma-related distress." },
+        { "min": 7, "max": 15, "message": "Moderate PTSD symptoms. You may be experiencing some trauma-related difficulties. Consider seeking support." },
+        { "min": 16, "max": 30, "message": "High likelihood of PTSD. Your symptoms suggest significant distress. Seeking professional help is strongly recommended." }
+    ]
+}

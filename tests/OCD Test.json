@@ -1,0 +1,54 @@
+{
+    "questions": [
+        {
+            "question": "Do you frequently have intrusive, unwanted thoughts that cause anxiety or distress?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you feel compelled to perform repetitive behaviors (e.g., checking, counting, washing hands) to reduce anxiety?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you feel extremely distressed if you are unable to complete a specific routine or ritual?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you excessively worry about things being in perfect order or symmetrical?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do your obsessive thoughts or compulsive behaviors interfere with your daily life or relationships?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        }
+    ],
+    "score_ranges": [
+        { "min": 0, "max": 6, "message": "Low likelihood of OCD. Your habits and thoughts appear within a normal range." },
+        { "min": 7, "max": 15, "message": "Moderate symptoms. You may have obsessive or compulsive tendencies that impact your well-being. Consider monitoring them closely." },
+        { "min": 16, "max": 30, "message": "High likelihood of OCD. Your symptoms suggest possible significant distress. Seeking professional evaluation is strongly recommended." }
+    ]
+}

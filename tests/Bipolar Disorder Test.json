@@ -1,0 +1,82 @@
+{
+    "questions": [
+        {
+            "question": "Do you experience extreme mood swings, from feeling very high and energetic to very low and depressed?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you sometimes feel overly confident, talkative, or have racing thoughts that make it hard to focus?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you experience periods of high energy where you feel like you don’t need much sleep?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Have you ever made impulsive decisions, such as excessive spending, risky behaviors, or reckless activities, during high-energy phases?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you experience long periods of sadness, loss of interest in activities, or hopelessness?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you feel extremely irritable or frustrated without a clear reason?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Have you experienced times when you felt extremely productive and creative, followed by times of deep exhaustion and inability to do anything?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do your mood swings significantly impact your relationships, work, or daily life?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        }
+    ],
+    "score_ranges": [
+        { "min": 0, "max": 10, "message": "Low likelihood of bipolar disorder. Your mood fluctuations are within a normal range." },
+        { "min": 11, "max": 20, "message": "Mild symptoms. You may experience mood swings, but they are not severe. Monitoring your mental health is recommended." },
+        { "min": 21, "max": 30, "message": "Moderate symptoms. You may have significant mood variations that impact your life. Seeking professional advice could be helpful." },
+        { "min": 31, "max": 48, "message": "High likelihood of bipolar disorder. Your symptoms suggest strong mood instability. Consulting a mental health professional is strongly recommended." }
+    ]
+}

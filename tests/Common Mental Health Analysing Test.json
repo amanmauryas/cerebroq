@@ -1,0 +1,91 @@
+{
+    "questions": [
+        {
+            "question": "Do you feel down or hopeless?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you have trouble sleeping or sleep too much?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you feel tired or have little energy?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you have difficulty concentrating on tasks?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Have you lost interest in things you used to enjoy?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you feel anxious or overly worried?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you experience sudden mood swings?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you feel like you are a burden to others?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 2 },
+                { "text": "Often", "score": 4 },
+                { "text": "Always", "score": 6 }
+            ]
+        },
+        {
+            "question": "Do you have thoughts of self-harm or suicide?",
+            "options": [
+                { "text": "Never", "score": 0 },
+                { "text": "Sometimes", "score": 3 },
+                { "text": "Often", "score": 6 },
+                { "text": "Always", "score": 10 }
+            ]
+        }
+    ],
+    "score_ranges": [
+        { "min": 0, "max": 10, "message": "Low risk of mental health concerns. Maintain a healthy lifestyle and monitor your emotions." },
+        { "min": 11, "max": 20, "message": "Moderate risk. You may be experiencing mild stress, anxiety, or depression. Consider speaking to a mental health professional." },
+        { "min": 21, "max": 30, "message": "High risk. You might be struggling with significant mental health concerns. Seeking professional help is strongly recommended." },
+        { "min": 31, "max": 50, "message": "Severe risk. Immediate consultation with a mental health professional is necessary. Reach out to someone you trust for support." }
+    ]
+}
