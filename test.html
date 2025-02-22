@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychological Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto Mono', monospace; }
+        .option { cursor: pointer; transition: all 0.3s; }
+        .option:hover, .selected { background-color: white !important; color: black !important; }
+    </style>
+</head>
+<body class="bg-black text-white flex flex-col min-h-screen">
+    <header class="p-4 border-b border-gray-700 flex justify-between items-center">
+        <h1 class="text-xl font-bold" id="testTitle">Loading...</h1>
+        <a href="index.html" class="text-blue-400 hover:text-blue-600">Back to Home</a>
+    </header>
+
+    <main id="disclaimer" class="flex-grow flex flex-col items-center justify-center text-center px-4">
+        <h2 class="text-2xl font-bold mb-4">Disclaimer</h2>
+        <p class="text-lg max-w-xl mb-4">This test is for informational and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment by a licensed psychiatrist or mental health professional. The results should not be considered a definitive psychological assessment. If you are experiencing mental health concerns, please consult a qualified healthcare provider.</p>
+        <p class="text-lg max-w-xl mb-4">This test is designed to analyze psychological traits that influence thoughts, behaviors, and decision-making.</p>
+        <p class="text-lg max-w-xl mb-4">Answer instinctively without overthinking.</p>
+        <button onclick="startTest()" class="border-2 border-blue-400 text-blue-400 px-6 py-2 text-lg font-bold hover:bg-blue-400 hover:text-black transition">START</button>
+    </main>
+
+    <div id="progressContainer" class="hidden w-full bg-gray-700 h-2">
+        <div id="progressBar" class="h-2 bg-blue-400" style="width: 0%;"></div>
+    </div>
+
+    <div id="testSection" class="hidden flex-grow flex flex-col items-center justify-center text-center px-4">
+        <h2 class="text-xl font-semibold mb-4" id="questionTitle">Question</h2>
+        <div id="optionsContainer" class="space-y-4"></div>
+        <div class="flex gap-4 mt-4">
+            <button onclick="prevQuestion()" id="prevBtn" class="hidden border-2 border-gray-500 text-gray-500 px-6 py-2 font-bold hover:bg-gray-500 hover:text-white transition">Previous</button>
+            <button onclick="nextQuestion()" id="nextBtn" class="border-2 border-blue-400 text-blue-400 px-6 py-2 font-bold hover:bg-blue-400 hover:text-black transition">Next</button>
+            <button onclick="submitTest()" id="submitBtn" class="hidden border-2 border-green-400 text-green-400 px-6 py-2 font-bold hover:bg-green-400 hover:text-black transition">Submit</button>
+        </div>
+    </div>
+
+    <div id="resultSection" class="hidden flex flex-col items-center justify-center p-6 text-center">
+        <h2 class="text-2xl font-bold mb-4">Your Result</h2>
+        <p id="resultMessage" class="text-lg max-w-xl"></p>
+        <button onclick="window.location.reload()" class="mt-4 border-2 border-red-400 text-red-400 px-6 py-2 font-bold hover:bg-red-400 hover:text-black transition">Retake Test</button>
+    </div>
+
+    <footer class="p-4 border-t border-gray-700 text-center">Made with ❤️ by Aman Maurya</footer>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let userResponses = [];
+        let questions = [];
+        let scoreRanges = [];
+
+        function getQueryParam(param) {
+            return new URLSearchParams(window.location.search).get(param);
+        }
+
+        const testName = decodeURIComponent(getQueryParam('name')) || "Psychological Test";
+        document.getElementById('testTitle').textContent = testName;
+
+        function fetchQuestions() {
+            fetch(`tests/${testName}.json`)
+                .then(response => response.json())
+                .then(data => {
+                    questions = data.questions;
+                    scoreRanges = data.score_ranges || [];
+                    if (questions.length === 0) return;
+                    loadQuestion();
+                })
+                .catch(() => {
+                    document.getElementById("questionTitle").textContent = "Error loading questions.";
+                });
+        }
+
+        function startTest() {
+            document.getElementById("disclaimer").classList.add("hidden");
+            document.getElementById("testSection").classList.remove("hidden");
+            document.getElementById("progressContainer").classList.remove("hidden");
+            fetchQuestions();
+        }
+
+        function loadQuestion() {
+            if (questions.length === 0) return;
+
+            const questionObj = questions[currentQuestionIndex];
+            document.getElementById("questionTitle").textContent = questionObj.question;
+
+            const optionsContainer = document.getElementById("optionsContainer");
+            optionsContainer.innerHTML = "";
+
+            questionObj.options.forEach((option, index) => {
+                const div = document.createElement("div");
+                div.textContent = option.text;
+                div.classList = "option border border-white py-4 px-8 rounded text-white";
+                div.onclick = () => selectOption(index, div);
+                optionsContainer.appendChild(div);
+            });
+
+            updateProgress();
+            updateButtons();
+        }
+
+        function selectOption(index, div) {
+            userResponses[currentQuestionIndex] = questions[currentQuestionIndex].options[index].score;
+            document.querySelectorAll(".option").forEach(el => el.classList.remove("selected"));
+            div.classList.add("selected");
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                loadQuestion();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion();
+            }
+        }
+
+        function updateButtons() {
+            document.getElementById("prevBtn").classList.toggle("hidden", currentQuestionIndex === 0);
+            document.getElementById("nextBtn").classList.toggle("hidden", currentQuestionIndex === questions.length - 1);
+            document.getElementById("submitBtn").classList.toggle("hidden", currentQuestionIndex !== questions.length - 1);
+        }
+
+        function updateProgress() {
+            document.getElementById("progressBar").style.width = `${((currentQuestionIndex + 1) / questions.length) * 100}%`;
+        }
+
+        function submitTest() {
+            const totalScore = userResponses.reduce((sum, score) => sum + (score || 0), 0);
+            document.getElementById("testSection").classList.add("hidden");
+            document.getElementById("resultSection").classList.remove("hidden");
+            document.getElementById("resultMessage").textContent = getResultMessage(totalScore);
+        }
+
+        function getResultMessage(score) {
+            return scoreRanges.find(range => score >= range.min && score <= range.max)?.message || "No interpretation available.";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CerebroQ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal.show .modal-content {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <header class="flex justify-between items-center p-4 border-b border-gray-200">
+        <h1 class="text-2xl font-bold">CerebroQ - Mental health Analysis test</h1>
+    
+        <!-- Hamburger Button -->
+        <!-- <div class="relative">
+            <button id="hamburgerBtn" class="flex flex-col justify-between w-8 h-6 focus:outline-none">
+                <span class="block w-8 h-1 bg-gray-700 rounded transition-all duration-300"></span>
+                <span class="block w-8 h-1 bg-gray-700 rounded transition-all duration-300"></span>
+                <span class="block w-8 h-1 bg-gray-700 rounded transition-all duration-300"></span>
+            </button> -->
+    
+            <!-- Dropdown Menu -->
+            <!-- <div id="menuDropdown" class="absolute right-0 mt-3 w-44 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible transform translate-y-3 transition-all duration-300">
+                <button onclick="toggleModal('loginModal')" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 w-full text-left">Login</button>
+                <button onclick="toggleModal('signupModal')" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 w-full text-left">Signup</button>
+                <button onclick="toggleModal('signupModal')" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 w-full text-left">Dashboard</button>
+            </div>
+        </div> -->
+    </header>
+    
+    
+    
+        <main class="text-center py-16">
+            <div class="inline-flex items-center gap-2 my-4 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer w-fit">
+                <img alt="AI Logo" class="h-6 w-6" src="https://cdn-icons-png.flaticon.com/512/4712/4712104.png"/>
+                <span>Generate with AI</span>
+            </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Unlock Insights into Your <span class="text-blue-600 font-[Pacifico]"> Mind </span> with CerebroQ
+        </h1>
+        <p class="text-gray-600 mb-8">Scientifically Designed Quizzes Trusted by Leading Psychiatric Associations.</p>
+    <div class="relative max-w-md mx-auto mb-8">
+        <i class="fas fa-search absolute top-3 left-3 text-gray-400"></i>
+        <input id="searchInput" class="w-full border border-gray-300 rounded pl-10 pr-4 py-2" placeholder="Search" type="text" onkeyup="filterItems()"/>
+    </div>
+    <div class="flex flex-wrap justify-center gap-2 mb-2">
+        <button onclick="toggleActive(this); openTest('Common Mental Health Analysing Test');" class="category-btn bg-blue-100 text-gray-700 px-4 py-2 rounded">
+            Common Mental Health Analysing Test
+        </button>
+    </div>
+    
+    <div class="flex flex-wrap justify-center gap-2 mb-2">
+        <button onclick="toggleActive(this); openTest('Depression Test');" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded">
+            Depression
+        </button>
+        <button onclick="toggleActive(this); openTest('Anxiety Test');" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded">
+            Anxiety
+        </button>
+        <button onclick="toggleActive(this); openTest('Bipolar Disorder Test');" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded">
+            Bipolar Disorder
+        </button>
+        <button onclick="toggleActive(this); openTest('Schizophrenia Test');" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded">
+            Schizophrenia
+        </button>
+        <button onclick="toggleActive(this); openTest('OCD Test');" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded">
+            OCD
+        </button>
+        <button onclick="toggleActive(this); openTest('PTSD Test');" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded">
+            PTSD
+        </button>
+    </div>
+    
+    <div class="flex flex-wrap justify-center gap-2 mb-2">
+        <button onclick="toggleActive(this); openTest('ADHD Test');" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded">
+            ADHD
+        </button>
+        <button onclick="toggleActive(this); openTest('Autism Spectrum Disorder Test');" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded">
+            Autism Spectrum Disorder
+        </button>
+        <button onclick="toggleActive(this); openTest('Borderline Personality Disorder Test');" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded">
+            Borderline Personality Disorder
+        </button>
+        <button onclick="toggleActive(this); openTest('Dissociative Identity Disorder Test');" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded">
+            Dissociative Identity Disorder
+        </button>
+        <button onclick="toggleActive(this); openTest('Eating Disorders Test');" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded">
+            Eating Disorders
+        </button>
+        <button onclick="toggleActive(this); openTest('Social Anxiety Disorder Test');" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded">
+            Social Anxiety Disorder
+        </button>
+    </div>
+    
+    <div class="flex flex-wrap justify-center gap-2 mb-2">
+        <button onclick="toggleActive(this); openTest('Insomnia Test');" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded">
+            Insomnia
+        </button>
+        <button onclick="toggleActive(this); openTest('Panic Disorder Test');" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded">
+            Panic Disorder
+        </button>
+        <button onclick="toggleActive(this); openTest('Obsessive-Compulsive Personality Disorder Test');" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded">
+            Obsessive-Compulsive Personality Disorder
+        </button>
+        <button onclick="toggleActive(this); openTest('Seasonal Affective Disorder Test');" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded">
+            Seasonal Affective Disorder
+        </button>
+        <button onclick="toggleActive(this); openTest('Phobias Test');" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded">
+            Phobias
+        </button>
+        <button onclick="toggleActive(this); openTest('Postpartum Depression Test');" class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded">
+            Postpartum Depression
+        </button>
+    </div>
+    
+</div>
+
+<script>
+    function toggleActive(button) {
+        // Reset all buttons to default style
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.classList.remove("bg-blue-600", "text-white", "border-blue-600");
+            btn.classList.add("bg-gray-200", "text-gray-700");
+        });
+
+        // Apply active styles to the clicked button
+        button.classList.remove("bg-gray-200", "text-gray-700");
+        button.classList.add("bg-blue-600", "text-white", "border-blue-600");
+    }
+</script>
+
+    
+    </div>
+</main>
+    <!-- Login Modal -->
+    <!-- <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <button onclick="toggleModal('loginModal')" class="absolute top-2 right-2 text-gray-500 hover:text-black">&times;</button>
+            <h2 class="text-2xl font-semibold mb-4">Login</h2>
+            <input type="email" placeholder="Email" class="w-full border px-4 py-2 mb-2 rounded">
+            <input type="password" placeholder="Password" class="w-full border px-4 py-2 mb-2 rounded">
+            <button class="bg-blue-600 text-white px-4 py-2 rounded w-full">Login</button>
+        </div>
+    </div>
+     -->
+    <!-- Signup Modal -->
+    <!-- <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <button onclick="toggleModal('signupModal')" class="absolute top-2 right-2 text-gray-500 hover:text-black">&times;</button>
+            <h2 class="text-2xl font-semibold mb-4">Signup</h2>
+            <input type="text" placeholder="Full Name" class="w-full border px-4 py-2 mb-2 rounded">
+            <input type="email" placeholder="Email" class="w-full border px-4 py-2 mb-2 rounded">
+            <input type="password" placeholder="Password" class="w-full border px-4 py-2 mb-2 rounded">
+            <button class="bg-blue-600 text-white px-4 py-2 rounded w-full">Signup</button>
+        </div>
+    </div> -->
+    <div class="bg-gradient-to-r from-blue-500 to-purple-600 py-4 mt-8 text-white text-center">
+        <footer class="text-lg font-semibold">
+            Made with ❤️ by <span class="underline hover:text-gray-200 transition duration-300">Aman Maurya</span>
+        </footer>
+    </div>
+    
+    <script>
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.toggle("show");
+        }
+    </script>
+    
+    <script>
+        const hamburgerBtn = document.getElementById("hamburgerBtn");
+        const menuDropdown = document.getElementById("menuDropdown");
+    
+        hamburgerBtn.addEventListener("click", function () {
+            // Toggle dropdown visibility
+            menuDropdown.classList.toggle("opacity-0");
+            menuDropdown.classList.toggle("invisible");
+            menuDropdown.classList.toggle("translate-y-3");
+    
+            // Animate Hamburger Bars
+            const bars = hamburgerBtn.querySelectorAll("span");
+            bars[0].classList.toggle("rotate-45", !menuDropdown.classList.contains("invisible"));
+            bars[1].classList.toggle("opacity-0", !menuDropdown.classList.contains("invisible"));
+            bars[2].classList.toggle("-rotate-45", !menuDropdown.classList.contains("invisible"));
+        });
+    
+        // Close menu when clicking outside
+        document.addEventListener("click", function (event) {
+            if (!hamburgerBtn.contains(event.target) && !menuDropdown.contains(event.target)) {
+                menuDropdown.classList.add("opacity-0", "invisible", "translate-y-3");
+                const bars = hamburgerBtn.querySelectorAll("span");
+                bars[0].classList.remove("rotate-45");
+                bars[1].classList.remove("opacity-0");
+                bars[2].classList.remove("-rotate-45");
+            }
+        });
+        
+    </script>
+    <script>
+        function openTest(testName) {
+    window.location.href = `test.html?name=${encodeURIComponent(testName)}`;
+}
+
+    </script>
+    
+    
+</body>
+</html>
