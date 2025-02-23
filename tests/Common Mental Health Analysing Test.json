@@ -86,6 +86,6 @@
         { "min": 0, "max": 10, "message": "Low risk of mental health concerns. Maintain a healthy lifestyle and monitor your emotions." },
         { "min": 11, "max": 20, "message": "Moderate risk. You may be experiencing mild stress, anxiety, or depression. Consider speaking to a mental health professional." },
         { "min": 21, "max": 30, "message": "High risk. You might be struggling with significant mental health concerns. Seeking professional help is strongly recommended." },
-        { "min": 31, "max": 50, "message": "Severe risk. Immediate consultation with a mental health professional is necessary. Reach out to someone you trust for support." }
+        { "min": 31, "max": 60, "message": "Severe risk. Immediate consultation with a mental health professional is necessary. Reach out to someone you trust for support." }
     ]
 }
